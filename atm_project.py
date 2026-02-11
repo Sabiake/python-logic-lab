@@ -24,18 +24,35 @@ logging.basicConfig(
 
 
 # ATM withdrawal function real code
-def atm_withdrawal(balance, amount):
-    current_balance = balance
-    amount = float(input("Enter amount: "))
-    if amount > current_balance:
-        print("Insufficient funds")
-    elif amount <= 0:
-        print("Invalid amount")
-    else:
-        current_balance -= amount
-        print(f"Withdrawal successful. New balance: {current_balance}")
-        log_transaction("withdrawal", amount, current_balance)
-        return current_balance
+def atm_withdrawal(balance):
+    """Handles ATM withdrawal logic and returns the updated balance."""
+    try:
+        # Prompt user inside the function since we need fresh input
+        amount_str = input("\nEnter amount to withdraw: ")
+        amount = float(amount_str)
+
+        # 2. Logical checks
+        if amount <= 0:
+            print("Invalid amount. Please enter a positive number.")
+            return balance
+
+        if amount > balance:
+            print(f"Insufficient funds. Your current balance is ${balance:.2f}")
+            return balance
+
+        # 3. Successful transaction
+        new_balance = balance - amount
+        print(f"Withdrawal successful. New balance: ${new_balance:.2f}")
+
+        # Log using the logging module instead of manual file writing
+        logging.info(f"Withdrawal of {amount}. New balance: {new_balance}")
+
+        return new_balance
+
+    except ValueError:
+        # 4. Handle non-numeric input (e.g., if user types "abc")
+        print("Error: Please enter a valid numerical amount.")
+        return balance
 
 
 # example usage
