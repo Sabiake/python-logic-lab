@@ -15,7 +15,7 @@ technical code with real-world scenarios—from ATM simulations to data processi
 
 ### 🛠️ Tech Stack
 * **Language:** Python 3.12+
-* **Core Libraries:** `datetime`, `logging`, `math`
+* **Core Libraries:** `datetime`, `logging`, `math`, `sys`, `socket`, `threading`
 * **Concepts:** Error Handling (Try/Except), File I/O, Data Validation, and Functional Programming.
 
 ---
