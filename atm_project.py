@@ -1,5 +1,5 @@
-from datetime import datetime
 import logging
+from datetime import datetime
 
 # Sample atm pseudocode
 # 1. Start
@@ -14,12 +14,13 @@ import logging
 #      b. Call atm_deposit(current_balance, deposit_amount)
 # 7. End
 
-
-def log_transaction(transaction_type, amount, balance):
-    logging.basicConfig(filename="atm_transactions.log", level=logging.INFO)
-    logging.info(
-        f"{datetime.now()}: {transaction_type} of {amount}. New balance: {balance}"
-    )
+# 1. Set-up a professional logging
+logging.basicConfig(
+    filename="atm_transactions.log",
+    level=logging.INFO,
+    format="%(asctime)s: %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
 
 
 # ATM withdrawal function real code
