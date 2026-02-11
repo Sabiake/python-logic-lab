@@ -15,6 +15,7 @@ from datetime import datetime
 # 7. End
 
 # 1. Set-up a professional logging
+
 logging.basicConfig(
     filename="atm_transactions.log",
     level=logging.INFO,
@@ -58,7 +59,7 @@ def atm_withdrawal(balance):
 # example usage / Perform the ATM Transaction
 def main():
     current_balance = 5000.0
-    print("--- Welcome to the 2026 Python ATM ---")
+    print("--- Welcome to my 2026 Python ATM ---")
 
     while True:
         print(f"\nCurrent Balance: ${current_balance:.2f}")
@@ -74,6 +75,5 @@ def main():
             print("Invalid selection.")
 
 
-# Perform the ATM Withdrawal
-atm_withdrawal(current_balance, 0)
-log_transaction("withdrawal", 0, current_balance)
+if __name__ == "__main__":
+    main()
