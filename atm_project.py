@@ -55,8 +55,24 @@ def atm_withdrawal(balance):
         return balance
 
 
-# example usage
-current_balance = 5000
+# example usage / Perform the ATM Transaction
+def main():
+    current_balance = 5000.0
+    print("--- Welcome to the 2026 Python ATM ---")
+
+    while True:
+        print(f"\nCurrent Balance: ${current_balance:.2f}")
+        choice = input("1. Withdraw\n2. Exit\nSelect option: ")
+
+        if choice == "1":
+            # 5. Capture the return value to update the global balance
+            current_balance = atm_withdrawal(current_balance)
+        elif choice == "2":
+            print("Thank you for using our ATM. Goodbye!")
+            break
+        else:
+            print("Invalid selection.")
+
 
 # Perform the ATM Withdrawal
 atm_withdrawal(current_balance, 0)
