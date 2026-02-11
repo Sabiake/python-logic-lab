@@ -43,26 +43,26 @@ def atm_withdrawal(balance):
 
         # 3. Successful transaction
         new_balance = balance - amount
-        print(f"Withdrawal successful. New balance: ${new_balance:.2f}")
+        print(f"Withdrawal successful. New balance: KES{new_balance:.2f}")
 
-        # Log using the logging module instead of manual file writing
+        # This logs using the logging module instead of manual file writing
         logging.info(f"Withdrawal of {amount}. New balance: {new_balance}")
 
         return new_balance
 
     except ValueError:
-        # 4. Handle non-numeric input (e.g., if user types "abc")
+        # 4. Handle non-numeric input (e.g., if user types "abc") just for better error handling
         print("Error: Please enter a valid numerical amount.")
         return balance
 
 
-# example usage / Perform the ATM Transaction
+# Example usage / Perform the ATM Transaction
 def main():
     current_balance = 5000.0
     print("--- Welcome to my 2026 Python ATM ---")
 
     while True:
-        print(f"\nCurrent Balance: ${current_balance:.2f}")
+        print(f"\nCurrent Balance: KES{current_balance:.2f}")
         choice = input("1. Withdraw\n2. Exit\nSelect option: ")
 
         if choice == "1":
