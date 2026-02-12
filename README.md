@@ -9,12 +9,13 @@ technical code with real-world scenarios—from ATM simulations to data processi
 
 ### 🚀 Featured Scripts
 * **ATM Simulation:** A robust terminal-based app with transaction logging and error handling.
+* **Network Port Scanner:** A multi-threaded utility that probes specific IP addresses for open ports. It demonstrates knowledge of the `socket` library, TCP handshakes, and network diagnostics—essential for technical SEO and web security audits.
 * **Data Utility Tools:** Scripts designed to clean and prep data for Excel & Power BI.
 * **AI & API Experiments:** Exploring rapid tech innovations through integrated Python libraries.
 
 ### 🛠️ Tech Stack
 * **Language:** Python 3.12+
-* **Core Libraries:** `datetime`, `logging`, `math`
+* **Core Libraries:** `datetime`, `logging`, `math`, `sys`, `socket`, `threading`
 * **Concepts:** Error Handling (Try/Except), File I/O, Data Validation, and Functional Programming.
 
 ---
